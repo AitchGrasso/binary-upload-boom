@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-const methodOverride = require("method-override");
+const methodOverride = require("method-override"); //rq a special npm package
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
@@ -34,7 +34,7 @@ app.use(express.json());
 app.use(logger("dev"));
 
 //Use forms for put / delete
-app.use(methodOverride("_method"));
+app.use(methodOverride("_method")); //use the methodOveride and see if there is a "_method" queryparameter
 
 // Setup Sessions - stored in MongoDB
 app.use(
@@ -58,6 +58,6 @@ app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 
 //Server Running
-app.listen(process.env.PORT, () => {
+app.listen(2121, () => {
   console.log("Server is running, you better catch it!");
 });

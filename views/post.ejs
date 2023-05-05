@@ -7,9 +7,10 @@
       <div class="row justify-content-between">
         <form
           class="col-1"
-          action="/post/likePost/<%= post.id %>?_method=PUT"
+          action="/post/likePost/<%= post.id %>?_method=PUT" put
           method="POST"
-        >
+        >  
+        <!-- it's a post but I need it to be a put? Need to overide the method -->
           <button class="btn btn-primary fa fa-heart" type="submit"></button>
         </form>
         <h3 class="col-3">Likes: <%= post.likes %></h3>

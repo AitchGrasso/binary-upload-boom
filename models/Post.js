@@ -26,7 +26,7 @@ const PostSchema = new mongoose.Schema({
     ref: "User",
   },
   createdAt: {
-    type: Date,
+    type: Date, //Expected output: "Fri, 02 Feb 1996 03:04:05 GMT"
     default: Date.now,
   },
 });

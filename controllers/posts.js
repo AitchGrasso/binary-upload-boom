@@ -47,10 +47,10 @@ module.exports = {
   },
   likePost: async (req, res) => {
     try {
-      await Post.findOneAndUpdate(
-        { _id: req.params.id },
+      await Post.findOneAndUpdate( //post model, find one post and update it
+        { _id: req.params.id }, //post of whichever one that has the id
         {
-          $inc: { likes: 1 },
+          $inc: { likes: 1 }, //when we find that post we will incrament that likes property by one
         }
       );
       console.log("Likes +1");

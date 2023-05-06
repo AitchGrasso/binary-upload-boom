@@ -10,6 +10,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
+const commentRoutes = require("./routes/comments");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -35,6 +36,7 @@ app.use(logger("dev"));
 
 //Use forms for put / delete
 app.use(methodOverride("_method")); //use the methodOveride and see if there is a "_method" queryparameter
+//that's not a post, that's a put
 
 // Setup Sessions - stored in MongoDB
 app.use(
@@ -56,6 +58,7 @@ app.use(flash());
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
+app.use("/comment", commentRoutes);
 
 //Server Running
 app.listen(2121, () => {

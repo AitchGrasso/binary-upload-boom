@@ -24,10 +24,10 @@ connectDB();
 //Using EJS for views
 app.set("view engine", "ejs");
 
-//Static Folder
+//Static Folder, css, js files
 app.use(express.static("public"));
 
-//Body Parsing
+//Body Parsing, pull stuff our of request
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
